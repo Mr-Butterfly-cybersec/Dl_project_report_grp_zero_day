@@ -8,3 +8,5 @@ mikeTex  link --> https://miktex.org/download Also available for mac too
 Vscode extension download -->https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop
 
 With both of these you can edit you tex files and for mac download  
+
+Also add the paper you are refrencing in your own folder 
