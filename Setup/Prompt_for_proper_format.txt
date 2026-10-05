@@ -1,0 +1,108 @@
+We are collaboratively writing a Semester V B.Tech mini-project report on
+real-time facial recognition.
+
+IMPORTANT: Follow these formatting and writing rules exactly.
+
+REPORT FORMAT
+- A4 paper
+- Double-column layout
+- 2 cm margins on all sides
+- Cambria font
+- Body text: 11 pt
+- Line spacing: 1.15
+- Main section headings: 12 pt, bold, left aligned
+- Sections are numbered using Roman numerals: I, II, III, IV...
+- Figure and table captions: 10 pt and italic
+- References/citations: IEEE style
+- All figures and tables must be numbered and referred to in the text.
+- Equations must be written using LaTeX equation/math environments.
+- Final report must be 3–4 pages.
+
+REPORT STRUCTURE
+- Title: 14 pt bold and centered
+- Group member names and IDs: 11 pt centered
+- Abstract: 120–200 words
+- I. Introduction: approximately 800 words
+- II. Architecture 1
+- III. Architecture 2
+- IV. Architecture 3
+- V. Architecture 4
+- VI. Analysis and Discussion
+- VII. Conclusion: approximately 100 words
+- References
+
+COLLABORATION RULES
+1. Do NOT modify the document class, packages, margins, fonts, title formatting,
+   section formatting, line spacing, page numbering, or preamble in main.tex.
+
+2. Only edit the section assigned to you.
+
+3. Write content directly in LaTeX.
+
+4. Do NOT manually type section numbers.
+   Correct:
+       \section{Light CNN}
+   Wrong:
+       \section{II. Light CNN}
+
+5. Do NOT manually change font size, font family, spacing, margins, or column layout
+   inside your section.
+
+6. Use \textbf{} only when genuinely necessary. Do not use excessive bold text.
+
+7. For citations use:
+       \cite{referenceKey}
+   Do not manually type [1], [2], etc.
+
+8. For figures use:
+       \begin{figure}[htbp]
+           \centering
+           \includegraphics[width=\columnwidth]{figures/image-name.png}
+           \caption{Description of the figure.}
+           \label{fig:example}
+       \end{figure}
+
+   Refer to it in the text using:
+       Fig.~\ref{fig:example}
+
+9. For tables use the existing LaTeX table formatting and give every table
+   a caption and label.
+
+10. For equations use:
+       \begin{equation}
+           ...
+           \label{eq:example}
+       \end{equation}
+
+11. Architecture analysis should cover, where applicable:
+    - selection criteria / reason for considering the architecture
+    - working principle and architecture
+    - performance
+    - computational complexity
+    - hardware/software requirements
+    - scalability
+    - flexibility
+    - advantages and limitations
+
+12. Architecture information must be based primarily on the ORIGINAL PUBLISHED
+    RESEARCH PAPER for that architecture. Do not use blogs, random websites,
+    Wikipedia, or ChatGPT as the academic source.
+
+13. Do not invent accuracy, FLOPs, parameter counts, dataset results, hardware
+    requirements, or other numerical values. Only include values supported by
+    the cited paper/source.
+
+14. Paraphrase the research in your own academic language. Do not copy paragraphs
+    from papers.
+
+15. Keep the writing concise because the complete report is limited to 3–4 pages.
+
+16. Do not add unnecessary packages to main.tex. If your section requires a new
+    LaTeX package, tell the group first.
+
+17. Before submitting your changes, compile using LuaLaTeX and make sure there
+    are no LaTeX errors.
+
+When I give you my assigned architecture/paper, produce ONLY the content for my
+assigned section in clean LaTeX. Do not regenerate the entire main.tex file and
+do not change the report formatting.

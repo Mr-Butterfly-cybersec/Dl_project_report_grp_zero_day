@@ -1,0 +1,242 @@
+% !TeX program = lualatex
+
+\documentclass[11pt,a4paper,twocolumn]{article}
+
+% ============================================================
+% PAGE SETUP
+% ============================================================
+
+\usepackage[
+    a4paper,
+    top=2cm,
+    bottom=2cm,
+    left=2cm,
+    right=2cm
+]{geometry}
+
+% ============================================================
+% FONT
+% ============================================================
+
+\usepackage{fontspec}
+
+% Assignment requires Cambria.
+% Explicitly define all Cambria font styles.
+\IfFontExistsTF{Cambria}{
+    \setmainfont{Cambria}[
+        BoldFont       = {Cambria Bold},
+        ItalicFont     = {Cambria Italic},
+        BoldItalicFont = {Cambria Bold Italic}
+    ]
+}{
+    % Fallback only if Cambria is unavailable
+    \setmainfont{TeX Gyre Termes}
+}
+
+% ============================================================
+% LINE SPACING
+% ============================================================
+
+\usepackage{setspace}
+\setstretch{1.15}
+
+% ============================================================
+% MATHEMATICS
+% ============================================================
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% ============================================================
+% FIGURES AND TABLES
+% ============================================================
+
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{caption}
+
+% Approx. 10 pt italic captions
+\captionsetup{
+    font={small,it},
+    labelfont={bf,it}
+}
+
+% ============================================================
+% REFERENCES
+% ============================================================
+
+\usepackage{cite}
+
+% ============================================================
+% SECTION FORMATTING
+% ============================================================
+
+\usepackage{titlesec}
+
+% Roman numerals: I, II, III...
+\renewcommand{\thesection}{\Roman{section}}
+
+% Section headings:
+% 12 pt, bold, left aligned
+\titleformat{\section}
+    {\fontsize{12}{14}\selectfont\bfseries}
+    {\thesection.}
+    {0.5em}
+    {}
+
+\titlespacing*{\section}
+    {0pt}
+    {8pt}
+    {4pt}
+
+% ============================================================
+% PAGE NUMBERS
+% ============================================================
+
+\pagestyle{plain}
+
+% ============================================================
+% GENERAL SPACING
+% ============================================================
+
+\setlength{\columnsep}{0.6cm}
+\setlength{\parindent}{1em}
+\setlength{\parskip}{0pt}
+
+\raggedbottom
+
+
+% ============================================================
+% DOCUMENT
+% ============================================================
+
+\begin{document}
+
+
+% ============================================================
+% TITLE AND AUTHORS
+% ============================================================
+
+\twocolumn[
+\begin{@twocolumnfalse}
+
+\begin{center}
+
+{\fontsize{14}{17}\selectfont\bfseries
+Analysis of Deep Learning Architectures for
+Real-Time Facial Recognition
+\par}
+
+\vspace{0.4cm}
+
+{\fontsize{11}{13}\selectfont
+Rahul Banyala (KU2407U434) \\
+Prachi Ranjan (KU2407U433) \\
+Rishu Pandey (KU2407U436) \\
+Gauri Mahesh Adelkar (KU2407U401)
+\par}
+
+\end{center}
+
+\vspace{0.3cm}
+
+\end{@twocolumnfalse}
+]
+
+
+% ============================================================
+% ABSTRACT
+% Required: 120--200 words
+% ============================================================
+
+\begin{abstract}
+
+\textit{[Write the 120--200 word abstract here.]}
+
+\end{abstract}
+
+
+% ============================================================
+% I. INTRODUCTION
+% Required: approximately 800 words
+% ============================================================
+
+\section{Introduction}
+
+\textit{[Write the introduction here. Approximately 800 words.]}
+
+
+% ============================================================
+% II. ARCHITECTURE 1
+% ============================================================
+
+\section{Architecture 1: Light CNN}
+
+\textit{[Write the analysis of Light CNN here.]}
+
+
+% ============================================================
+% III. ARCHITECTURE 2
+% ============================================================
+
+\section{Architecture 2: Name}
+
+\textit{[Write the analysis of Architecture 2 here.]}
+
+
+% ============================================================
+% IV. ARCHITECTURE 3
+% ============================================================
+
+\section{Architecture 3: Name}
+
+\textit{[Write the analysis of Architecture 3 here.]}
+
+
+% ============================================================
+% V. ARCHITECTURE 4
+% ============================================================
+
+\section{Architecture 4: Name}
+
+\textit{[Write the analysis of Architecture 4 here.]}
+
+
+% ============================================================
+% VI. ANALYSIS AND DISCUSSION
+% ============================================================
+
+\section{Analysis and Discussion}
+
+\textit{[Critically compare the four architectures here.]}
+
+
+% ============================================================
+% VII. CONCLUSION
+% Required: approximately 100 words
+% ============================================================
+
+\section{Conclusion}
+
+\textit{[Write the approximately 100 word conclusion here.]}
+
+
+% ============================================================
+% REFERENCES
+% IEEE FORMAT
+% ============================================================
+
+\begin{thebibliography}{99}
+
+% Example:
+%
+% \bibitem{example}
+% A. Author, B. Author, and C. Author,
+% ``Title of paper,''
+% \textit{Journal or Conference Name},
+% vol. X, no. X, pp. XX--XX, Year.
+
+\end{thebibliography}
+
+
+\end{document}
