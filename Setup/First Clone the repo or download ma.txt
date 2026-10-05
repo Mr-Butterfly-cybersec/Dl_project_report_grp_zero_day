@@ -1,0 +1,11 @@
+First Clone the repo or download main tex file
+1)  Vsstudio for editing tex file locally and download extension for vscode latex one check with lualatex --version in vscode for tex compilation 
+2)  Texlive for compilation of tex files 
+3)  Setup git add you section push to different branch or create a issue or pull request and do it make do not push to main tex so our format remains same 
+
+
+TexLive  link --> https://tug.org/texlive/windows.html
+
+Vscode extension download -->https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop
+
+With both of these you can edit you tex files and for mac download Mactex --> https://www.tug.org/mactex/ for compilation vscode steps remain same 
