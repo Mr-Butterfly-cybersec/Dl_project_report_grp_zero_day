@@ -1,0 +1,20 @@
+{
+    "dataset": "Labeled Faces in the Wild",
+    "variant": "funneled",
+    "task": "closed-set identity classification",
+    "minimum_faces_per_person": 70,
+    "resize": null,
+    "color": true,
+    "number_of_classes": 7,
+    "number_of_samples": 1288,
+    "train_fraction": 0.7,
+    "validation_fraction": 0.15,
+    "test_fraction": 0.15,
+    "random_seed": 42,
+    "scikit_learn_version": "1.9.1",
+    "image_shape": [
+        125,
+        94,
+        3
+    ]
+}

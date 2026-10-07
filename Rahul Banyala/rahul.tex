@@ -1,0 +1,258 @@
+% !TeX program = lualatex
+
+\documentclass[11pt,a4paper,twocolumn]{article}
+
+% ============================================================
+% PAGE SETUP
+% ============================================================
+
+\usepackage[
+    a4paper,
+    top=2cm,
+    bottom=2cm,
+    left=2cm,
+    right=2cm
+]{geometry}
+
+% ============================================================
+% FONT
+% ============================================================
+
+\usepackage{fontspec}
+
+% Assignment requires Cambria.
+% Explicitly define all Cambria font styles.
+\IfFontExistsTF{Cambria}{
+    \setmainfont{Cambria}[
+        BoldFont       = {Cambria Bold},
+        ItalicFont     = {Cambria Italic},
+        BoldItalicFont = {Cambria Bold Italic}
+    ]
+}{
+    % Fallback only if Cambria is unavailable
+    \setmainfont{TeX Gyre Termes}
+}
+
+% ============================================================
+% LINE SPACING
+% ============================================================
+
+\usepackage{setspace}
+\setstretch{1.15}
+
+% Improve line breaking in the narrow columns and avoid splitting words.
+\usepackage{microtype}
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+\emergencystretch=2em
+
+% ============================================================
+% MATHEMATICS
+% ============================================================
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% ============================================================
+% FIGURES AND TABLES
+% ============================================================
+
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{caption}
+
+% Approx. 10 pt italic captions
+\captionsetup{
+    font={small,it},
+    labelfont={bf,it}
+}
+
+% ============================================================
+% REFERENCES
+% ============================================================
+
+\usepackage{cite}
+
+% ============================================================
+% SECTION FORMATTING
+% ============================================================
+
+\usepackage{titlesec}
+
+% Roman numerals: I, II, III...
+\renewcommand{\thesection}{\Roman{section}}
+
+% Section headings:
+% 12 pt, bold, left aligned
+\titleformat{\section}
+    {\fontsize{12}{14}\selectfont\bfseries}
+    {\thesection.}
+    {0.5em}
+    {}
+
+\titlespacing*{\section}
+    {0pt}
+    {8pt}
+    {4pt}
+
+% ============================================================
+% PAGE NUMBERS
+% ============================================================
+
+\pagestyle{plain}
+
+% ============================================================
+% GENERAL SPACING
+% ============================================================
+
+\setlength{\columnsep}{0.6cm}
+\setlength{\parindent}{1em}
+\setlength{\parskip}{0pt}
+
+\raggedbottom
+
+
+% ============================================================
+% DOCUMENT
+% ============================================================
+
+\begin{document}
+
+
+% ============================================================
+% TITLE AND AUTHORS
+% ============================================================
+
+\twocolumn[
+\begin{@twocolumnfalse}
+
+\begin{center}
+
+{\fontsize{14}{17}\selectfont\bfseries
+Analysis of Deep Learning Architectures for
+Real-Time Facial Recognition
+\par}
+
+\vspace{0.4cm}
+
+{\fontsize{11}{13}\selectfont
+Rahul Banyala (KU2407U434) \\
+Prachi Ranjan (KU2407U433) \\
+Rishu Pandey (KU2407U436) \\
+Gauri Mahesh Adelkar (KU2407U401)
+\par}
+
+\end{center}
+
+\vspace{0.3cm}
+
+\end{@twocolumnfalse}
+]
+
+
+% ============================================================
+% ABSTRACT
+% Required: 120--200 words
+% ============================================================
+
+\begin{abstract}
+
+This study deals with the real-time recognition of people using CNN-based deep learning models. It reviews and compares four different architectures: LightCNN-9, [Architecture 2], [Architecture 3], and [Architecture 4]. The comparison uses the experimental results and figures reported in the original research papers. Wherever possible, results obtained using the same facial dataset and evaluation protocol are selected to maintain a fair comparison. The models are compared based on recognition accuracy, computational requirements, inference speed, and suitability for real-time use. The study aims to identify which architecture provides the best balance between recognition performance and computational efficiency for a real-time facial recognition system. Later, the best-performing model will be used to build a real-time face recognition system using our own dataset.
+
+\end{abstract}
+
+
+% ============================================================
+% I. INTRODUCTION
+% Required: approximately 800 words
+% ============================================================
+
+\section{Introduction}
+
+Facial recognition is a domain of computer vision that deals with recognising a human face and assigning a label or identity to it. It is commonly used in security systems, access control, attendance monitoring, surveillance, mobile-device authentication, and the organisation of digital images. Unlike face detection, which only finds the location of a face within an image, facial recognition attempts to determine the identity of the detected person. In a real-time facial recognition system, this complete process must be performed quickly enough to recognise people from a live image or video stream. Therefore, such a system requires not only good recognition accuracy but also efficient processing and a suitable response time.
+
+The major challenge in facial recognition lies in the large variety of human faces and the different conditions in which facial images can be captured. Changes in the surrounding environment, lighting, facial position, camera angle, facial expression, and distance from the camera can significantly affect recognition performance. Other factors, such as low image resolution, image size, partial facial obstruction, background variation, ageing, and poor camera quality, can make the task even more difficult. The same person may appear different under different conditions, while two different people may sometimes have similar facial features. A reliable facial recognition model must therefore learn the important features that represent a person's identity while reducing the effect of these unwanted variations.
+
+Within this field, Convolutional Neural Networks (CNNs) have become one of the major deep learning models used for recognising and classifying images. CNNs learn features directly from image data through hierarchical representations. The earlier layers generally learn simple features such as edges, lines, and textures, while the deeper layers learn more complex patterns such as facial structures and identity-related features. Their local connectivity and shared-weight mechanism allow them to process images efficiently and make them highly versatile for different image-related tasks. However, different CNN architectures may produce different results in terms of recognition accuracy, model size, computational requirements, and processing speed.
+
+In this study, four CNN-based architectures are reviewed and compared for facial recognition: LightCNN-9, [Architecture 2], [Architecture 3], and [Architecture 4]. LightCNN-9 is a compact facial recognition architecture that uses the Max-Feature-Map activation to select more informative features and reduce the effect of less useful information. Its relatively lightweight structure makes it an important candidate for a real-time facial recognition system where computational efficiency is required. The remaining architectures are also studied to understand how their designs influence recognition performance, efficiency, and suitability for real-time use.
+
+The comparison is based on the experimental results and figures reported in the original research papers. To make the comparison as fair as possible, results obtained using similar datasets, evaluation protocols, preprocessing methods, and performance metrics are selected wherever they are available. Results from different testing conditions are not treated as directly equivalent, and these differences are considered while discussing the performance of each architecture. The models are compared using factors such as recognition accuracy, inference speed, model size, and computational requirements.
+
+The main purpose of this study is to identify the architecture that provides the best balance between recognition performance and computational efficiency. The best-performing and most suitable model will later be selected to build a real-time facial recognition system trained on our own dataset. This comparison will therefore provide the foundation for choosing a model that can recognise the required individuals accurately while still being practical for real-time implementation.
+
+
+% ============================================================
+% II. ARCHITECTURE 1
+% ============================================================
+
+\section{Architecture 1: Light CNN}
+
+\textit{[Write the analysis of Light CNN here.]}
+
+
+% ============================================================
+% III. ARCHITECTURE 2
+% ============================================================
+
+\section{Architecture 2: Name}
+
+\textit{[Write the analysis of Architecture 2 here.]}
+
+
+% ============================================================
+% IV. ARCHITECTURE 3
+% ============================================================
+
+\section{Architecture 3: Name}
+
+\textit{[Write the analysis of Architecture 3 here.]}
+
+
+% ============================================================
+% V. ARCHITECTURE 4
+% ============================================================
+
+\section{Architecture 4: Name}
+
+\textit{[Write the analysis of Architecture 4 here.]}
+
+
+% ============================================================
+% VI. ANALYSIS AND DISCUSSION
+% ============================================================
+
+\section{Analysis and Discussion}
+
+\textit{[Critically compare the four architectures here.]}
+
+
+% ============================================================
+% VII. CONCLUSION
+% Required: approximately 100 words
+% ============================================================
+
+\section{Conclusion}
+
+\textit{[Write the approximately 100 word conclusion here.]}
+
+
+% ============================================================
+% REFERENCES
+% IEEE FORMAT
+% ============================================================
+
+\begin{thebibliography}{99}
+
+% Example:
+%
+% \bibitem{example}
+% A. Author, B. Author, and C. Author,
+% ``Title of paper,''
+% \textit{Journal or Conference Name},
+% vol. X, no. X, pp. XX--XX, Year.
+
+\end{thebibliography}
+
+
+\end{document}
