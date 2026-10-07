@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.24.0 (MiKTeX 25.12) (format=lualatex 2026.10.5)  7 OCT 2026 21:52
+This is LuaHBTeX, Version 1.24.0 (MiKTeX 25.12) (format=lualatex 2026.10.5)  7 OCT 2026 22:14
  restricted system commands enabled.
 **./rahul.tex
 (./rahul.tex
@@ -719,9 +719,17 @@ Underfull \hbox (badness 1810) in paragraph at lines 212--213
 \TU/Cambria(0)/m/n/10.95 can be re-placed with a new clas-si-󰅬ier for the
  []
 
-[2] [3
+[2]
+Underfull \hbox (badness 2173) in paragraph at lines 248--249
+\TU/Cambria(0)/m/n/10.95 num-ber of pa-ram-e-ters, em-bed-ding di-men-sion,
+ []
 
-<./figures/lightcnn9_publication.pdf>] (./rahul.aux)
+
+Underfull \hbox (badness 7777) in paragraph at lines 248--249
+\TU/Cambria(0)/m/n/10.95 Ta-ble 1[] pro-vides the com-mon struc-ture for
+ []
+
+[3<./figures/lightcnn9_publication.pdf>] [4] (./rahul.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-24>
@@ -729,27 +737,28 @@ L3 programming layer <2025-12-24>
 )
 
 Here is how much of LuaTeX's memory you used:
- 9606 strings out of 476081
+ 9645 strings out of 476081
  125240,794899 words of node,token memory allocated
- 565 words of node memory still in use:
+ 569 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 1 local_par, 4 glue, 4 kern, 1 penalty, 1 margin_ke
-rn, 3 glyph, 10 attribute, 55 glue_spec, 10 attribute_list, 1 write nodes
-   avail lists: 1:2,2:249,3:117,4:75,5:966,6:30,7:9839,8:24,9:310,10:11,11:880
- 31923 multiletter control sequences out of 65536+600000
- 53 fonts using 19993327 bytes
- 73i,6n,94p,1003b,456s stack positions out of 10000i,1000n,20000p,200000b,200000s
+rn, 3 glyph, 11 attribute, 55 glue_spec, 11 attribute_list, 1 write nodes
+   avail lists: 1:2,2:461,3:136,4:75,5:966,6:35,7:9839,8:24,9:310,10:11,11:880
+ 31962 multiletter control sequences out of 65536+600000
+ 69 fonts using 24327807 bytes
+ 73i,10n,94p,1003b,456s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/WINDOWS/Fonts/cambriai.ttf><C:/WINDOWS/Fonts/cambriaz.ttf><C:/WINDOWS/Fonts/
 cambria.ttc><C:/WINDOWS/Fonts/cambriab.ttf><C:/Users/bash/AppData/Local/Programs
 /MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/bash/AppData/Local/P
 rograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/bash/AppData/
-Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/bash/Ap
-pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/b
-ash/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Us
-ers/bash/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb
->
-Output written on rahul.pdf (3 pages, 221006 bytes).
+Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/bash/Ap
+pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/b
+ash/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/U
+sers/bash/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb>
+<C:/Users/bash/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy
+10.pfb>
+Output written on rahul.pdf (4 pages, 234088 bytes).
 
-PDF statistics: 100 PDF objects out of 1000 (max. 8388607)
+PDF statistics: 107 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 1048576)
  1 words of extra memory for PDF output out of 10000 (max. 100000000)
 

@@ -245,7 +245,28 @@ The smaller model size, low-dimensional representation, and use of grayscale ima
 
 \section{Analysis and Discussion}
 
-\textit{[Critically compare the four architectures here.]}
+The four architectures will be compared using the results reported in their original research papers. LFW is selected as the primary dataset because it is widely used for evaluating facial recognition models. YTF is selected as the second dataset because it evaluates recognition from video frames containing changes in pose, expression, lighting, and image quality. A result will only be treated as a direct comparison when the models use the same dataset, evaluation protocol, and performance metric. Results obtained using different protocols will be discussed separately. Along with recognition performance, the comparison will consider the number of parameters, embedding dimension, inference time, and the hardware used for testing. Table~\ref{tab:architecture_comparison} provides the common structure for recording these results. The remaining values will be added after the other architectures have been studied.
+
+\begin{table*}[t]
+    \centering
+    \caption{Preliminary comparison of the four facial recognition architectures using results reported in their original papers.}
+    \label{tab:architecture_comparison}
+    \begin{tabular}{lccccc}
+        \toprule
+        \textbf{Architecture} & \textbf{LFW Acc. (\%)} & \textbf{YTF Acc. (\%)} & \textbf{Parameters} & \textbf{Embedding} & \textbf{Inference time} \\
+        \midrule
+        LightCNN-9 & 98.80 & 93.40 & 5.556M & 256-D & 67 ms$^{a}$ \\
+        Architecture 2 & -- & -- & -- & -- & -- \\
+        Architecture 3 & -- & -- & -- & -- & -- \\
+        Architecture 4 & -- & -- & -- & -- & -- \\
+        \bottomrule
+    \end{tabular}
+
+    \vspace{2pt}
+    \begin{minipage}{0.96\textwidth}
+        \footnotesize\textit{$^{a}$Reported for feature extraction using one core of an Intel i7-4790 processor. Accuracy values should only be compared directly when the evaluation protocols are equivalent.}
+    \end{minipage}
+\end{table*}
 
 
 % ============================================================
@@ -255,7 +276,7 @@ The smaller model size, low-dimensional representation, and use of grayscale ima
 
 \section{Conclusion}
 
-\textit{[Write the approximately 100 word conclusion here.]}
+\textit{[Complete the approximately 100-word conclusion after the remaining architectures and comparison results have been added.]}
 
 
 % ============================================================
