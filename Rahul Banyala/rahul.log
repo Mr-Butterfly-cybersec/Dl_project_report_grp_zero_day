@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.24.0 (MiKTeX 25.12) (format=lualatex 2026.10.5)  7 OCT 2026 15:56
+This is LuaHBTeX, Version 1.24.0 (MiKTeX 25.12) (format=lualatex 2026.10.5)  7 OCT 2026 21:52
  restricted system commands enabled.
 **./rahul.tex
 (./rahul.tex
@@ -643,10 +643,85 @@ Underfull \hbox (badness 2529) in paragraph at lines 182--183
 \TU/Cambria(0)/m/n/10.95 fa-cial recog-ni-tion sys-tem trained on our own
  []
 
+LaTeX Font Info:    Trying to load font information for U+msa on input line 193
+.
+(C:/Users/bash/AppData/Local/Programs/MiKTeX/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+(C:/Users/bash/AppData/Local/Programs/MiKTeX/tex/latex/microtype/mt-msa.cfg
+File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 193
+.
 
-LaTeX Warning: Empty `thebibliography' environment on input line 255.
+(C:/Users/bash/AppData/Local/Programs/MiKTeX/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+(C:/Users/bash/AppData/Local/Programs/MiKTeX/tex/latex/microtype/mt-msb.cfg
+File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
+)
+(C:/Users/bash/AppData/Local/Programs/MiKTeX/tex/latex/microtype/mt-cmr.cfg
+File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
+(RS)
+)
+Underfull \hbox (badness 10000) in paragraph at lines 193--194
+[]\TU/Cambria(0)/m/n/10.95 The main fea-ture of LightCNN is the
+ []
 
-[2] (./rahul.aux)
+
+Underfull \hbox (badness 7168) in paragraph at lines 193--194
+\TU/Cambria(0)/m/n/10.95 Max-Feature-Map (MFM) op-er-a-tion, which is
+ []
+
+
+Underfull \hbox (badness 1112) in paragraph at lines 199--200
+\TU/Cambria(0)/m/n/10.95 to re-tain the stronger fa-cial in-for-ma-tion while
+ []
+
+<figures/lightcnn9_publication.pdf, id=7, 896.148pt x 411.939pt>
+File: figures/lightcnn9_publication.pdf Graphic file (type pdf)
+<use figures/lightcnn9_publication.pdf>
+Package luatex.def Info: figures/lightcnn9_publication.pdf  used on input line 
+205.
+(luatex.def)             Requested size: 483.69687pt x 222.34944pt.
+
+Underfull \hbox (badness 1371) in paragraph at lines 210--211
+[]\TU/Cambria(0)/m/n/10.95 Ac-cord-ing to the orig-i-nal pa-per, LightCNN-9
+ []
+
+
+Underfull \hbox (badness 3861) in paragraph at lines 210--211
+\TU/Cambria(0)/m/n/10.95 pa-per re-ports 98.80% ac-cu-racy on LFW and
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 212--213
+[]\TU/Cambria(0)/m/n/10.95 The smaller model size, low-dimensional
+ []
+
+
+Underfull \hbox (badness 7415) in paragraph at lines 212--213
+\TU/Cambria(0)/m/n/10.95 rep-re-sen-ta-tion, and use of grayscale im-ages
+ []
+
+
+Underfull \hbox (badness 1231) in paragraph at lines 212--213
+\TU/Cambria(0)/m/n/10.95 by the orig-i-nal au-thors. The LFW re-sult also
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 212--213
+\TU/Cambria(0)/m/n/10.95 rep-re-sents face ver-i-󰅬i-ca-tion rather than the
+ []
+
+
+Underfull \hbox (badness 1810) in paragraph at lines 212--213
+\TU/Cambria(0)/m/n/10.95 can be re-placed with a new clas-si-󰅬ier for the
+ []
+
+[2] [3
+
+<./figures/lightcnn9_publication.pdf>] (./rahul.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-24>
@@ -654,20 +729,27 @@ L3 programming layer <2025-12-24>
 )
 
 Here is how much of LuaTeX's memory you used:
- 9401 strings out of 476081
+ 9606 strings out of 476081
  125240,794899 words of node,token memory allocated
- 560 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 1 local_par, 5 glue, 4 kern, 1 penalty, 3 glyph, 8 
-attribute, 55 glue_spec, 8 attribute_list, 1 write nodes
-   avail lists: 1:2,2:205,3:106,4:76,5:835,6:30,7:9077,8:2,9:237,10:11,11:850
- 31746 multiletter control sequences out of 65536+600000
- 30 fonts using 14065855 bytes
- 73i,5n,94p,1003b,241s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/WINDOWS/Fonts/cambriai.ttf><C:/WINDOWS/Fonts/cambria.ttc><C:/WINDOWS/Fonts/c
-ambriab.ttf>
-Output written on rahul.pdf (2 pages, 84671 bytes).
+ 565 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 1 local_par, 4 glue, 4 kern, 1 penalty, 1 margin_ke
+rn, 3 glyph, 10 attribute, 55 glue_spec, 10 attribute_list, 1 write nodes
+   avail lists: 1:2,2:249,3:117,4:75,5:966,6:30,7:9839,8:24,9:310,10:11,11:880
+ 31923 multiletter control sequences out of 65536+600000
+ 53 fonts using 19993327 bytes
+ 73i,6n,94p,1003b,456s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/WINDOWS/Fonts/cambriai.ttf><C:/WINDOWS/Fonts/cambriaz.ttf><C:/WINDOWS/Fonts/
+cambria.ttc><C:/WINDOWS/Fonts/cambriab.ttf><C:/Users/bash/AppData/Local/Programs
+/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/bash/AppData/Local/P
+rograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/bash/AppData/
+Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/bash/Ap
+pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/b
+ash/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Us
+ers/bash/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb
+>
+Output written on rahul.pdf (3 pages, 221006 bytes).
 
-PDF statistics: 30 PDF objects out of 1000 (max. 8388607)
+PDF statistics: 100 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 1048576)
  1 words of extra memory for PDF output out of 10000 (max. 100000000)
 

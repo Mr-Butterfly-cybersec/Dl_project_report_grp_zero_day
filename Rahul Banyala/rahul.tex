@@ -186,9 +186,30 @@ The main purpose of this study is to identify the architecture that provides the
 % II. ARCHITECTURE 1
 % ============================================================
 
-\section{Architecture 1: Light CNN}
+\section{Architecture 1: LightCNN-9}
 
-\textit{[Write the analysis of Light CNN here.]}
+LightCNN was introduced by Wu et al. to learn facial features from large-scale datasets containing incorrectly labelled and noisy images \cite{wu2018lightcnn}. The main objective of this architecture is to achieve reliable facial recognition while reducing the model size and computational requirements. LightCNN-9 is one of the smaller architectures proposed in the original study, making it suitable for systems where recognition speed and available hardware are important.
+
+The main feature of LightCNN is the Max-Feature-Map (MFM) operation, which is used instead of a conventional activation function such as ReLU. A convolutional layer first produces $2N$ feature maps, which are divided into pairs. MFM compares the corresponding values in each pair and keeps the maximum value:
+
+\begin{equation}
+\hat{x}_{ij}^{k}=\max\left(x_{ij}^{k},x_{ij}^{k+N}\right)
+\end{equation}
+
+As a result, $2N$ input feature maps are reduced to $N$ output feature maps. This creates competition between the feature maps and allows the network to retain the stronger facial information while suppressing weaker or noisy responses.
+
+LightCNN-9 takes a $128 \times 128$ grayscale facial image as its input. The first stage contains a $5 \times 5$ convolution followed by MFM and max pooling. It is followed by four convolution blocks, with each block containing a $1 \times 1$ convolution, MFM, a $3 \times 3$ convolution, and another MFM operation. Four max-pooling operations gradually reduce the spatial dimensions to $8 \times 8 \times 128$. The resulting features are flattened into 8,192 values and passed through a fully connected layer containing 512 outputs. MFM then reduces this output to a compact 256-dimensional facial representation. Finally, a fully connected classifier produces a score for each identity class. The complete flow of the architecture is presented in Figure~\ref{fig:lightcnn9_architecture}.
+
+\begin{figure*}[t]
+    \centering
+    \includegraphics[width=\textwidth]{figures/lightcnn9_publication.pdf}
+    \caption{Architecture of LightCNN-9 showing the convolution blocks, MFM operations, pooling layers, 256-dimensional embedding, and identity classifier.}
+    \label{fig:lightcnn9_architecture}
+\end{figure*}
+
+According to the original paper, LightCNN-9 contains approximately 5.556 million parameters and requires approximately 1 GFLOP. It produces a 256-dimensional facial representation and requires approximately 67 ms for feature extraction on a single core of an Intel i7-4790 processor. The paper reports 98.80\% accuracy on LFW and 93.40\% accuracy on YTF under its stated evaluation protocols \cite{wu2018lightcnn}.
+
+The smaller model size, low-dimensional representation, and use of grayscale images make LightCNN-9 a suitable candidate for real-time facial recognition. However, its fully connected layer requires a fixed input size, and the reported processing time depends on the hardware used by the original authors. The LFW result also represents face verification rather than the identity-classification task required by our final system. For our implementation, the final classifier can be replaced with a new classifier for the identities in our own dataset while retaining the earlier layers for facial feature extraction.
 
 
 % ============================================================
@@ -251,6 +272,12 @@ The main purpose of this study is to identify the architecture that provides the
 % ``Title of paper,''
 % \textit{Journal or Conference Name},
 % vol. X, no. X, pp. XX--XX, Year.
+
+\bibitem{wu2018lightcnn}
+X. Wu, R. He, Z. Sun, and T. Tan,
+``A light CNN for deep face representation with noisy labels,''
+\textit{IEEE Transactions on Information Forensics and Security},
+vol. 13, no. 11, pp. 2884--2896, 2018.
 
 \end{thebibliography}
 

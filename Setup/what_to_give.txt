@@ -1,0 +1,64 @@
+COMMON STRUCTURE FOR EACH ARCHITECTURE SECTION
+
+Each architecture section should be approximately 300-400 words and should follow the same order:
+
+1. Architecture overview and design objective
+   Introduce the architecture, its original research paper, publication year, and the problem it was designed to solve.
+
+2. Main architectural feature
+   Explain the feature that distinguishes the architecture from an ordinary CNN. Examples include Max-Feature-Map, residual connections, angular-margin loss, or depthwise convolution.
+
+3. Architecture flow
+   Describe the input size and format, preprocessing, convolution blocks, pooling layers, embedding layer, and final output. Include one labelled architecture figure and refer to it in the text.
+
+4. Training and evaluation setup
+   State the training dataset, testing dataset, preprocessing method, loss function, and evaluation protocol reported in the original paper.
+
+5. Reported performance and efficiency
+   Record the results reported in the original paper. Include accuracy or verification performance, parameter count, FLOPs or MACs, embedding dimension, inference time, and testing hardware wherever available. Write "not reported" if the paper does not provide a value instead of estimating it.
+
+6. Strengths, limitations, and suitability
+   Critically discuss the architecture's accuracy, processing speed, model size, computational requirements, hardware requirements, scalability, limitations, and suitability for a real-time facial recognition system.
+
+
+RULES FOR EVERY TEAM MEMBER
+
+- Use the originally published research paper as the main source and cite it in IEEE style.
+- Write the explanation in your own words.
+- Include one clear and numbered architecture figure with an in-text reference.
+- Do not directly compare accuracy values unless they use the same dataset, evaluation protocol, and metric.
+- Always state the dataset, protocol, metric, and tested hardware when reporting a result.
+- Do not treat a verification result as a classification result.
+- Use "not reported" when information is unavailable instead of guessing.
+- Clearly separate results reported by the original authors from results obtained in our own implementation.
+
+
+INFORMATION TO COLLECT
+
+Architecture:
+Model version:
+Original paper title:
+Authors:
+Publication year:
+Design objective:
+Input size and colour format:
+Preprocessing method:
+Main innovation:
+Layer or block flow:
+Embedding dimension:
+Output type:
+Loss function:
+Training dataset:
+Testing dataset:
+Evaluation protocol:
+Reported performance and metric:
+Number of parameters:
+FLOPs or MACs:
+Inference time:
+Testing hardware:
+Main strengths:
+Main limitations:
+Suitability for our real-time system:
+
+
+The collected information will later be used in the common Analysis and Discussion table. This allows all four architectures to be compared using the same selection criteria while clearly identifying results that are not directly comparable.
