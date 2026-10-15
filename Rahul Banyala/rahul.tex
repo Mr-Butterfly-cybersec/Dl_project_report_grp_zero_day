@@ -61,6 +61,7 @@
 \usepackage{booktabs}
 \usepackage{caption}
 \usepackage{multicol}
+\usepackage{cuted}
 
 % Approx. 10 pt italic captions
 \captionsetup{
@@ -172,15 +173,21 @@ This study deals with the real-time recognition of people using CNN-based deep l
 
 Facial recognition is a domain of computer vision that deals with recognising a human face and assigning a label or identity to it. It is commonly used in security systems, access control, attendance monitoring, surveillance, mobile-device authentication, and the organisation of digital images. Unlike face detection, which only finds the location of a face within an image, facial recognition attempts to determine the identity of the detected person. In a real-time facial recognition system, this complete process must be performed quickly enough to recognise people from a live image or video stream. Therefore, such a system requires not only good recognition accuracy but also efficient processing and a suitable response time.
 
-The major challenge in facial recognition lies in the large variety of human faces and the different conditions in which facial images can be captured. Changes in the surrounding environment, lighting, facial position, camera angle, facial expression, and distance from the camera can significantly affect recognition performance. Other factors, such as low image resolution, image size, partial facial obstruction, background variation, ageing, and poor camera quality, can make the task even more difficult. The same person may appear different under different conditions, while two different people may sometimes have similar facial features. A reliable facial recognition model must therefore learn the important features that represent a person's identity while reducing the effect of these unwanted variations.
+The main challenge is that facial images can vary considerably, even when they belong to the same person. Lighting, camera angle, head position, facial expression, distance from the camera, image resolution, and partial obstruction can all affect the appearance of a face. Ageing and differences in camera quality add further variation. At the same time, different people may share some similar facial features. A recognition model must learn which patterns are useful for identifying a person and avoid relying too heavily on changes caused by the image or capture conditions. This is important in a live system, where images may not be as consistent as the carefully prepared images used in a research experiment.
 
-Within this field, Convolutional Neural Networks (CNNs) have become one of the major deep learning models used for recognising and classifying images. CNNs learn features directly from image data through hierarchical representations. The earlier layers generally learn simple features such as edges, lines, and textures, while the deeper layers learn more complex patterns such as facial structures and identity-related features. Their local connectivity and shared-weight mechanism allow them to process images efficiently and make them highly versatile for different image-related tasks. However, different CNN architectures may produce different results in terms of recognition accuracy, model size, computational requirements, and processing speed.
+Convolutional Neural Networks (CNNs) are widely used for image recognition because they learn features directly from image data. Early layers generally respond to simple patterns such as edges and textures, while deeper layers combine these into more complex shapes and facial features. CNNs reuse learned filters across an image, which helps them process spatial information without learning a separate weight for every pixel location. However, CNN architectures differ in how they learn identity, represent a face, and use computation. A model that is accurate on a benchmark may still be too large or slow for the hardware intended for a real-time application, so accuracy alone is not enough to choose a model.
 
-In this study, four CNN-based architectures are reviewed and compared for facial recognition: LightCNN-9, FaceNet, VGGFace, and MobileNetV1. LightCNN-9 is a compact facial recognition architecture that uses the Max-Feature-Map activation to select more informative features and reduce the effect of less useful information. Its relatively lightweight structure makes it an important candidate for a real-time facial recognition system where computational efficiency is required. The remaining architectures are also studied to understand how their designs influence recognition performance, efficiency, and suitability for real-time use.
+This study reviews four architectures: LightCNN-9, FaceNet, VGGFace, and MobileNetV1. LightCNN was designed for face representation learning from large datasets that may contain noisy or incorrectly labelled images. Its Max-Feature-Map (MFM) operation compares pairs of feature maps and retains the stronger response, reducing the number of maps passed to later layers. LightCNN-9 is one of the smaller models in the study and produces a 256-dimensional face representation. These features make its balance of representation quality and computational cost relevant to our project \cite{wu2018lightcnn}.
 
-The comparison is based on the experimental results and figures reported in the original research papers. To make the comparison as fair as possible, results obtained using similar datasets, evaluation protocols, preprocessing methods, and performance metrics are selected wherever they are available. Results from different testing conditions are not treated as directly equivalent, and these differences are considered while discussing the performance of each architecture. The models are compared using factors such as recognition accuracy, inference speed, model size, and computational requirements.
+FaceNet takes a different approach to learning identity. It maps each face to a feature vector, or embedding, and trains the network with triplets consisting of an anchor image, a matching image, and a non-matching image. The training objective brings embeddings of the same person closer and separates those of different people. This representation can then be used for verification, recognition, or clustering, rather than relying only on a fixed output class for every person seen during training \cite{schroff2015facenet}. The result depends on the embedding model and training setup, so its reported scores need to be read together with the protocol used in the paper.
 
-The main purpose of this study is to identify the architecture that provides the best balance between recognition performance and computational efficiency. The best-performing and most suitable model will later be selected to build a real-time facial recognition system trained on our own dataset. This comparison will therefore provide the foundation for choosing a model that can recognise the required individuals accurately while still being practical for real-time implementation.
+VGGFace uses a deep CNN for face recognition and studies how features learned from face images can be used to represent identity. The architecture follows a sequence of convolutional layers and pooling operations, followed by fully connected layers. The original work evaluates face recognition on benchmarks including LFW and YTF, and reports results under specific training and evaluation settings \cite{parkhi2015deep}. Its depth and feature representation provide a useful point of comparison with the more compact architectures, although the original paper does not report every efficiency measure needed for a direct real-time comparison.
+
+MobileNetV1 was designed to reduce the computational cost of CNNs, particularly for mobile and resource-constrained devices. It uses depthwise separable convolutions: spatial filtering is performed separately for each input channel, and a pointwise convolution then combines information across channels. Width and resolution multipliers can further reduce the model's size and computation, with a corresponding trade-off in accuracy \cite{howard2017mobilenets}. Since this original work focuses on general image classification, this study uses face-verification measurements reported for a MobileNetV1 baseline in a separate face-recognition study where available, rather than treating ImageNet results as facial-recognition results \cite{chen2018mobilefacenets}.
+
+The four models therefore represent different priorities: feature selection and compact face representation in LightCNN-9, distance-based embeddings in FaceNet, a deep face-specific CNN in VGGFace, and efficient convolution in MobileNetV1. Comparing them helps explain why a single accuracy figure cannot determine which architecture is best for our application. The datasets, training methods, preprocessing, evaluation protocols, and hardware differ between the original studies. In particular, face verification asks whether two images show the same person, whereas our planned webcam application must assign a detected face to one of the people enrolled in our own dataset. Published verification accuracy is useful background, but it is not a direct measure of that final identification task.
+
+For this reason, the comparison uses reported results and figures from the cited research papers, selecting similar datasets and metrics where possible. Differences in test conditions are noted rather than treated as if the measurements were directly equivalent. The architectures are considered in terms of recognition performance, embedding size, parameter count, computational requirements, and inference speed. Some sources do not report all of these values for the specific configuration considered, so missing values are identified instead of being estimated from another model variant. The final selection will require testing the candidate models on the same dataset and hardware, including the time needed for face detection, preprocessing, and recognition. The aim is to choose a model that recognises the required individuals reliably while remaining practical for real-time use.
 
 
 % ============================================================
@@ -201,17 +208,16 @@ As a result, $2N$ input feature maps are reduced to $N$ output feature maps. Thi
 
 LightCNN-9 takes a $128 \times 128$ grayscale facial image as its input. The first stage contains a $5 \times 5$ convolution followed by MFM and max pooling. It is followed by four convolution blocks, with each block containing a $1 \times 1$ convolution, MFM, a $3 \times 3$ convolution, and another MFM operation. Four max-pooling operations gradually reduce the spatial dimensions to $8 \times 8 \times 128$. The resulting features are flattened into 8,192 values and passed through a fully connected layer containing 512 outputs. MFM then reduces this output to a compact 256-dimensional facial representation. Finally, a fully connected classifier produces a score for each identity class. The complete flow of the architecture is presented in Figure~\ref{fig:lightcnn9_architecture}.
 
-\begin{figure*}[t]
+\begin{strip}
     \centering
     \includegraphics[width=\textwidth]{figures/lightcnn9_publication.pdf}
-    \caption{Architecture of LightCNN-9 showing the convolution blocks, MFM operations, pooling layers, 256-dimensional embedding, and identity classifier.}
+    \captionof{figure}{Architecture of LightCNN-9 showing the convolution blocks, MFM operations, pooling layers, 256-dimensional embedding, and identity classifier.}
     \label{fig:lightcnn9_architecture}
-\end{figure*}
+\end{strip}
 
 According to the original paper, LightCNN-9 contains approximately 5.556 million parameters and requires approximately 1 GFLOP. It produces a 256-dimensional facial representation and requires approximately 67 ms for feature extraction on a single core of an Intel i7-4790 processor. The paper reports 98.80\% accuracy on LFW and 93.40\% accuracy on YTF under its stated evaluation protocols \cite{wu2018lightcnn}.
 
 The smaller model size, low-dimensional representation, and use of grayscale images make LightCNN-9 a suitable candidate for real-time facial recognition. However, its fully connected layer requires a fixed input size, and the reported processing time depends on the hardware used by the original authors. The LFW result also represents face verification rather than the identity-classification task required by our final system. For our implementation, the final classifier can be replaced with a new classifier for the identities in our own dataset while retaining the earlier layers for facial feature extraction.
-
 
 % ============================================================
 % III. ARCHITECTURE 2
@@ -336,7 +342,7 @@ FaceNet achieves a face-verification accuracy of \textbf{98.87\% $\pm$ 0.15} wit
 
 \begin{center}
     \centering
-    \includegraphics[width=0.88\columnwidth]{figures/facenet_lfw_errors.png}
+    \includegraphics[width=0.62\columnwidth]{figures/facenet_lfw_errors.png}
     \captionof{figure}{LFW errors. This shows all pairs of images that were incorrectly classified on LFW}
     \label{fig:facenet_lfw_errors}
 \end{center}
@@ -420,8 +426,6 @@ Its main strength is simplicity: a plain deep CNN reaches near state-of-the-art 
 % ============================================================
 % V. ARCHITECTURE 4
 % ============================================================
-
-\clearpage
 
 \begingroup
 \hyphenpenalty=50
@@ -529,49 +533,42 @@ These results help identify candidates, but differences in training, evaluation 
 
 \section{Conclusion}
 
-This study compares LightCNN-9, FaceNet, VGGFace and MobileNetV1 for real-time facial recognition. Published results help identify candidates, but different training data, evaluation protocols and hardware prevent a direct ranking. Face verification also differs from identifying people in our webcam system. Reporting gaps limit the comparison: NN1 inference time, VGGFace's parameter count and inference time, and MobileNetV1's YTF accuracy and embedding dimension are not explicitly given in the selected sources. NR means not reported, not zero; missing values are not estimated or taken from different model variants. Since the papers do not explain every omission, we cannot assign a reason to each gap. Our final choice requires testing accuracy, model size and complete processing time on our own dataset and hardware.
-
+This study compares LightCNN-9, FaceNet, VGGFace and MobileNetV1 for a real-time facial recognition system. Each architecture uses a different approach to learning facial features and managing computational cost. Published results help identify suitable candidates, but differences in training data, evaluation protocols and hardware prevent a direct ranking. Face verification also differs from identifying people in our webcam system. Several values are not explicitly reported in the selected sources: NN1 inference time, VGGFace's parameter count and inference time, and MobileNetV1's YTF accuracy and embedding dimension. NR means not reported; these values are not zero or estimates from other model variants. The papers do not explain every omission. Our final choice will require testing accuracy, model size and complete processing time on our own dataset and hardware.
 
 % ============================================================
-% REFERENCES
-% IEEE FORMAT
+% FINAL COMPARISON TABLE
 % ============================================================
 
-\clearpage
-\onecolumn
-
-\begin{center}
-    \captionof{table}{Final dataset and efficiency comparison using published research results. NR denotes a value not explicitly reported for the selected configuration.}
-    \label{tab:architecture_comparison}
-    \vspace{4pt}
-    \begin{tabular}{lccccc}
-        \toprule
-        \textbf{Architecture} & \textbf{LFW Acc. (\%)} & \textbf{YTF Acc. (\%)} & \textbf{Parameters} & \textbf{Embedding} & \textbf{Inference time} \\
-        \midrule
-        LightCNN-9 & 98.80 & 93.40 & 5.556M & 256-D & 67 ms$^{a}$ \\
-        FaceNet$^{b}$ & 99.63 & 95.12 & 140M & 128-D & NR \\
-        VGGFace$^{c}$ & 98.95 & 97.3 & NR & 1,024-D & NR \\
-        MobileNetV1$^{d}$ & 98.63 & NR & 3.2M & NR & 60 ms$^{e}$ \\
-        \bottomrule
-    \end{tabular}
-\end{center}
-
-\begingroup
+\begin{strip}
+\centering
+\captionof{table}{Final dataset and efficiency comparison using published research results. NR denotes a value not explicitly reported for the selected configuration.}
+\label{tab:architecture_comparison}
+\footnotesize
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{lccccc}
+    \toprule
+    \textbf{Architecture} & \textbf{LFW Acc. (\%)} & \textbf{YTF Acc. (\%)} & \textbf{Parameters} & \textbf{Embedding} & \textbf{Inference time} \\
+    \midrule
+    LightCNN-9 & 98.80 & 93.40 & 5.556M & 256-D & 67 ms$^{a}$ \\
+    FaceNet$^{b}$ & 99.63 & 95.12 & 140M & 128-D & NR \\
+    VGGFace$^{c}$ & 98.95 & 97.3 & NR & 1,024-D & NR \\
+    MobileNetV1$^{d}$ & 98.63 & NR & 3.2M & NR & 60 ms$^{e}$ \\
+    \bottomrule
+\end{tabular}
+\vspace{1pt}
+\begin{minipage}{0.98\textwidth}
 \footnotesize
 \setlength{\parindent}{0pt}
-\setlength{\parskip}{4pt}
-$^{a}$Feature extraction on one core of an Intel i7-4790 processor. The paper labels its LFW setting as unsupervised, unlike the unrestricted settings reported for FaceNet and VGGFace. Source: Wu et al., Tables IV and X \cite{wu2018lightcnn}.
+\setlength{\parskip}{1pt}
+\setlength{\baselineskip}{9pt}
+$^{a}$Feature extraction on one Intel i7-4790 core; the LFW setting is unsupervised, unlike the unrestricted FaceNet and VGGFace settings. Source: Wu et al., Tables IV and X \cite{wu2018lightcnn}.\par
+$^{b}$LFW: $99.63\%\pm0.09$ with extra alignment for NN1 (about 140M parameters); NN2 has 7.5M parameters and is not the model attached to this score. YTF: $95.12\%\pm0.39$ using 100 detected frames per video; the paper does not explicitly identify the backbone in that subsection. Source: Schroff et al., Table 1 and Sections 5.6--5.7 \cite{schroff2015facenet}.\par
+$^{c}$LFW accuracy is 98.95\%; 99.13\% is $100\%-\mathrm{EER}$, a different metric. YTF accuracy is 97.3\% with embedding learning and $K=100$; $100\%-\mathrm{EER}$ is 97.4\%. Later efficiency values for a 4,096-dimensional VGG descriptor are not substituted for this 1,024-dimensional configuration. Source: Parkhi et al., Tables 4--6 \cite{parkhi2015deep}; Wu et al. \cite{wu2018lightcnn}.\par
+$^{d}$MobileNetV1 baseline trained on CASIA-WebFace with ArcFace loss, not MobileFaceNet or the original ImageNet classifier. Its 88.95\% AgeDB-30 result is not a YTF result. Source: Chen et al., Table 2 \cite{chen2018mobilefacenets}.\par
+$^{e}$Snapdragon 820 CPU, four threads, NCNN; this timing is not directly comparable with LightCNN-9.
+\end{minipage}
+\end{strip}
 
-$^{b}$LFW: $99.63\%\pm0.09$ with extra alignment, reported for NN1 (approximately 140M parameters). NN2 has 7.5M parameters and is not the model attached to this LFW score. YTF: $95.12\%\pm0.39$ using 100 detected frames per video; the paper does not explicitly identify the backbone in that YTF subsection. Source: Schroff et al., Table 1 and Sections 5.6--5.7 \cite{schroff2015facenet}.
-
-$^{c}$LFW accuracy is 98.95\%; the separately reported 99.13\% is $100\%-\mathrm{EER}$, not the same metric. YTF accuracy is 97.3\% with embedding learning and $K=100$; its $100\%-\mathrm{EER}$ result is 97.4\%. Source: Parkhi et al., Tables 4--6 \cite{parkhi2015deep}. Later efficiency figures for a released VGG model using a 4,096-dimensional descriptor are not substituted for this 1,024-dimensional configuration \cite{wu2018lightcnn}.
-
-$^{d}$MobileNetV1 baseline trained on CASIA-WebFace using ArcFace loss, not MobileFaceNet or the original ImageNet classifier. Its additional AgeDB-30 accuracy is 88.95\%, but this is not a YTF result. Source: Chen et al., Table 2 \cite{chen2018mobilefacenets}.
-
-$^{e}$Snapdragon 820 CPU, four threads, NCNN. This timing cannot be directly ranked against the LightCNN-9 timing.
-\endgroup
-
-\begin{multicols}{2}
 \begin{thebibliography}{99}
 \interlinepenalty=10000
 
@@ -612,6 +609,5 @@ S. Chen, Y. Liu, X. Gao, and Z. Han,
 \textit{arXiv preprint arXiv:1804.07573v4}, 2018.
 
 \end{thebibliography}
-\end{multicols}
 
 \end{document}
