@@ -1,6 +1,6 @@
-This is LuaHBTeX, Version 1.24.0 (MiKTeX 25.12) (format=lualatex 2026.10.5)  5 OCT 2026 23:34
+This is LuaHBTeX, Version 1.24.0 (MiKTeX 25.12) (format=lualatex 2026.10.5)  15 OCT 2026 02:00
  restricted system commands enabled.
-**main.tex
+**./main.tex
 (./main.tex
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-24>
@@ -458,18 +458,175 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 
-Underfull \hbox (badness 5147) in paragraph at lines 221--222
-\TU/Cambria(0)/m/it/10.95 [Write the ap-prox-i-mately 100 word con-clu-sion
+Underfull \hbox (badness 3724) in paragraph at lines 170--171
+[]\TU/Cambria(0)/m/n/10.95 Within this 󰅬ield, Con-vo-lu-tional Neu-ral Net-
  []
 
 
-LaTeX Warning: Empty `thebibliography' environment on input line 239.
+Underfull \hbox (badness 3019) in paragraph at lines 172--173
+\TU/Cambria(0)/m/n/10.95 re-viewed and com-pared for fa-cial recog-ni-tion:
+ []
 
 [1{C:/Users/bash/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}
 
 
+]
+Underfull \hbox (badness 1189) in paragraph at lines 176--177
+\TU/Cambria(0)/m/n/10.95 the ar-chi-tec-ture that pro-vides the best bal-ance
+ []
 
-] (./main.aux)
+
+Underfull \hbox (badness 1622) in paragraph at lines 176--177
+\TU/Cambria(0)/m/n/10.95 vide the foun-da-tion for choos-ing a model that
+ []
+
+LaTeX Font Info:    Trying to load font information for U+msa on input line 187
+.
+(C:/Users/bash/AppData/Local/Programs/MiKTeX/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 187
+.
+
+(C:/Users/bash/AppData/Local/Programs/MiKTeX/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+Underfull \hbox (badness 4886) in paragraph at lines 187--188
+[]\TU/Cambria(0)/m/n/10.95 The main fea-ture of LightCNN is the Max-
+ []
+
+<figures/lightcnn9_publication.pdf, id=7, 896.148pt x 411.939pt>
+File: figures/lightcnn9_publication.pdf Graphic file (type pdf)
+<use figures/lightcnn9_publication.pdf>
+Package luatex.def Info: figures/lightcnn9_publication.pdf  used on input line 
+199.
+(luatex.def)             Requested size: 483.69687pt x 222.34944pt.
+
+Underfull \hbox (badness 1286) in paragraph at lines 200--200
+[]\TU/Cambria(0)/b/it/10 Fig-ure 1: |\TU/Cambria(0)/m/it/10 Ar-chi-tec-ture of 
+LightCNN-9 show-ing the con-vo-lu-tion blocks, MFM op-er-a-tions, pool-ing lay-e
+rs, 256-
+ []
+
+
+Underfull \hbox (badness 2689) in paragraph at lines 204--205
+[]\TU/Cambria(0)/m/n/10.95 Ac-cord-ing to the orig-i-nal pa-per, LightCNN-9
+ []
+
+
+Underfull \hbox (badness 1210) in paragraph at lines 204--205
+\TU/Cambria(0)/m/n/10.95 quires ap-prox-i-mately 67 ms for fea-ture ex-trac-
+ []
+
+
+Underfull \hbox (badness 1466) in paragraph at lines 206--207
+\TU/Cambria(0)/m/n/10.95 re-sen-ta-tion, and use of grayscale im-ages make
+ []
+
+[2]
+<figures/facenet_model_structure.png, id=17, 654.445pt x 137.51375pt>
+File: figures/facenet_model_structure.png Graphic file (type png)
+<use figures/facenet_model_structure.png>
+Package luatex.def Info: figures/facenet_model_structure.png  used on input lin
+e 221.
+(luatex.def)             Requested size: 233.31252pt x 49.0244pt.
+
+Underfull \hbox (badness 1112) in paragraph at lines 230--231
+[]\TU/Cambria(0)/m/n/10.95 The loss func-tion is de-󰅬ined us-ing triplets of
+ []
+
+<figures/facenet_triplet_loss.png, id=18, 668.4975pt x 162.6075pt>
+File: figures/facenet_triplet_loss.png Graphic file (type png)
+<use figures/facenet_triplet_loss.png>
+Package luatex.def Info: figures/facenet_triplet_loss.png  used on input line 2
+40.
+(luatex.def)             Requested size: 233.31252pt x 56.7522pt.
+[3<./figures/lightcnn9_publication.pdf><./figures/facenet_model_structure.png><.
+/figures/facenet_triplet_loss.png>]
+<figures/facenet_sdg.png, id=61, 1104.125pt x 871.255pt>
+File: figures/facenet_sdg.png Graphic file (type png)
+<use figures/facenet_sdg.png>
+Package luatex.def Info: figures/facenet_sdg.png  used on input line 267.
+(luatex.def)             Requested size: 233.31252pt x 184.09895pt.
+
+Underfull \hbox (badness 2529) in paragraph at lines 272--273
+[]\TU/Cambria(0)/m/n/10.95 The x-axis and y-axis rep-re-sent the weights
+ []
+
+<figures/facenet_relu.png, id=62, 1104.125pt x 820.06375pt>
+File: figures/facenet_relu.png Graphic file (type png)
+<use figures/facenet_relu.png>
+Package luatex.def Info: figures/facenet_relu.png  used on input line 286.
+(luatex.def)             Requested size: 205.31615pt x 152.48523pt.
+
+Underfull \hbox (badness 1603) in paragraph at lines 293--294
+[]\TU/Cambria(0)/m/n/10.95 The two types of CNN ar-chi-tec-tures used in
+ []
+
+
+Underfull \hbox (badness 1331) in paragraph at lines 295--296
+\TU/Cambria(0)/m/n/10.95 in-tro-duced a novel vi-su-al-iza-tion tech-nique that
+ []
+
+<figures/facenet_zeiler_fergus.png, id=63, 567.11874pt x 635.37375pt>
+File: figures/facenet_zeiler_fergus.png Graphic file (type png)
+<use figures/facenet_zeiler_fergus.png>
+Package luatex.def Info: figures/facenet_zeiler_fergus.png  used on input line 
+299.
+(luatex.def)             Requested size: 214.64708pt x 240.47502pt.
+[4<./figures/facenet_sdg.png><./figures/facenet_relu.png><./figures/facenet_zeil
+er_fergus.png>]
+<figures/facenet_inception.png, id=67, 1281.78876pt x 604.2575pt>
+File: figures/facenet_inception.png Graphic file (type png)
+<use figures/facenet_inception.png>
+Package luatex.def Info: figures/facenet_inception.png  used on input line 308.
+
+(luatex.def)             Requested size: 233.31252pt x 109.98795pt.
+
+Underfull \hbox (badness 2080) in paragraph at lines 321--322
+[]\TU/Cambria(0)/m/n/10.95 FaceNet achieves a clas-si-󰅬i-ca-tion ac-cu-racy 
+of
+ []
+
+<figures/facenet_lfw_errors.png, id=68, 457.71pt x 663.47874pt>
+File: figures/facenet_lfw_errors.png Graphic file (type png)
+<use figures/facenet_lfw_errors.png>
+Package luatex.def Info: figures/facenet_lfw_errors.png  used on input line 325
+.
+(luatex.def)             Requested size: 205.31615pt x 297.62115pt.
+
+Underfull \hbox (badness 2359) in paragraph at lines 359--360
+\TU/Cambria(0)/m/n/10.95 same dataset, eval-u-a-tion pro-to-col, and per-for-
+ []
+
+
+Underfull \hbox (badness 5147) in paragraph at lines 390--391
+\TU/Cambria(0)/m/it/10.95 [Write the ap-prox-i-mately 100 word con-clu-sion
+ []
+
+
+Underfull \hbox (badness 1184) in paragraph at lines 409--413
+[]\TU/Cambria(0)/m/n/10.95 X. Wu, R. He, Z. Sun, and T. Tan, ``A light
+ []
+
+
+Underfull \hbox (badness 4096) in paragraph at lines 409--413
+\TU/Cambria(0)/m/n/10.95 la-bels,'' \TU/Cambria(0)/m/it/10.95 IEEE Trans-ac-tion
+s on In-for-ma-tion
+ []
+
+
+Underfull \hbox (badness 1122) in paragraph at lines 415--419
+[]\TU/Cambria(0)/m/n/10.95 F. Schroff, D. Kalenichenko, and J. Philbin,
+ []
+
+
+Underfull \hbox (badness 4713) in paragraph at lines 415--419
+\TU/Cambria(0)/m/n/10.95 ``FaceNet: A uni-󰅬ied em-bed-ding for face
+ []
+
+[5<./figures/facenet_inception.png><./figures/facenet_lfw_errors.png>] [6]
+(./main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-24>
@@ -477,20 +634,29 @@ L3 programming layer <2025-12-24>
 )
 
 Here is how much of LuaTeX's memory you used:
- 7341 strings out of 476081
+ 7515 strings out of 476081
  100000,662416 words of node,token memory allocated
- 499 words of node memory still in use:
-   6 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 6 attribute, 55 glue_spec,
- 6 attribute_list, 1 write nodes
-   avail lists: 2:283,3:143,4:11,5:326,6:44,7:1949,8:2,9:163,10:10,11:142
- 29707 multiletter control sequences out of 65536+600000
- 30 fonts using 14065855 bytes
- 73i,5n,94p,213b,241s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/WINDOWS/Fonts/cambriai.ttf><C:/WINDOWS/Fonts/cambria.ttc><C:/WINDOWS/Fonts/c
-ambriab.ttf>
-Output written on main.pdf (1 page, 74172 bytes).
+ 527 words of node memory still in use:
+   6 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 13 attribute, 55 glue_spec
+, 13 attribute_list, 1 write nodes
+   avail lists: 2:575,3:211,4:17,5:961,6:53,7:10211,8:24,9:405,10:16,11:898
+ 29846 multiletter control sequences out of 65536+600000
+ 69 fonts using 24327807 bytes
+ 73i,11n,94p,954b,424s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/WINDOWS/Fonts/cambriai.ttf><C:/WINDOWS/Fonts/cambriaz.ttf><C:/WINDOWS/Fonts/
+cambria.ttc><C:/WINDOWS/Fonts/cambriab.ttf><C:/Users/bash/AppData/Local/Programs
+/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/bash/AppData/Local/P
+rograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/bash/AppData/
+Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/bash/Ap
+pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/b
+ash/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/U
+sers/bash/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb>
+<C:/Users/bash/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy
+10.pfb><C:/Users/bash/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/
+cm/cmsy9.pfb>
+Output written on main.pdf (6 pages, 2129714 bytes).
 
-PDF statistics: 27 PDF objects out of 1000 (max. 8388607)
+PDF statistics: 128 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 1048576)
  1 words of extra memory for PDF output out of 10000 (max. 100000000)
 
